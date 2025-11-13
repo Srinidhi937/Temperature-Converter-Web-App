@@ -4,42 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Temperature Converter</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #89f7fe, #66a6ff);
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    .container {
-      background: white;
-      padding: 25px;
-      border-radius: 15px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
-      text-align: center;
-      width: 300px;
-    }
-    h2 { color: #333; }
-    input, select {
-      width: 80%;
-      padding: 8px;
-      margin: 10px 0;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-    }
-    button {
-      padding: 10px 20px;
-      background: #007bff;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-    button:hover { background: #0056b3; }
-    p { font-weight: bold; }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
@@ -55,25 +20,6 @@
     <p id="result"></p>
   </div>
 
-  <script>
-    function convertTemp() {
-      let temp = parseFloat(document.getElementById("tempInput").value);
-      let unit = document.getElementById("unit").value;
-      let result = "";
-
-      if (isNaN(temp)) {
-        result = "Please enter a valid number.";
-      } else {
-        if (unit === "C") {
-          result = `${temp}°C = ${(temp * 9/5 + 32).toFixed(2)}°F = ${(temp + 273.15).toFixed(2)}K`;
-        } else if (unit === "F") {
-          result = `${temp}°F = ${((temp - 32) * 5/9).toFixed(2)}°C = ${(((temp - 32) * 5/9) + 273.15).toFixed(2)}K`;
-        } else if (unit === "K") {
-          result = `${temp}K = ${(temp - 273.15).toFixed(2)}°C = ${((temp - 273.15) * 9/5 + 32).toFixed(2)}°F`;
-        }
-      }
-      document.getElementById("result").innerHTML = result;
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
